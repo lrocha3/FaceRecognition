@@ -1,9 +1,9 @@
 /*
- * FaceDetector.cpp
- *
- *  Created on: 20/05/2017
- *  Author: Luis Rocha
- */
+* FaceDetector.cpp
+*
+*  Created on: 20/05/2017
+*  Author: Luis Rocha
+*/
 
 #include "FaceDetector.h"
 
@@ -14,11 +14,11 @@ using namespace cv;
 const string face_cascade_name = FACE_XML_CLASSIFIER;
 
 void DetectAndDisplayFaces(Mat frame, CascadeClassifier face_cascade)
- {
+{
     vector<Rect> faces;
- 	Mat frame_gray;
- 	string text;
- 	stringstream sstm;
+    Mat frame_gray;
+    string text;
+    stringstream sstm;
 
     /* Current Face Variables */
     Rect CurrentRegion;
@@ -79,27 +79,27 @@ void DetectAndDisplayFaces(Mat frame, CascadeClassifier face_cascade)
     imshow("Raspberry Pi Camera", frame);
     /* Give time to OpenCV to update the image being displayed */
     waitKey(30);
- }
+}
 
 void FaceDetectorThread(StopProgram &condition)
 {
     CascadeClassifier face_cascade;
-	Mat frame;
+    Mat frame;
 
     /* Open the camera for the video stream capture */
     VideoCapture capture(0);
 
     /* Reduce the size of the window and the FPS */
-	capture.set(CAP_PROP_FRAME_HEIGHT, 500);
-	capture.set(CAP_PROP_FRAME_WIDTH, 400);
-	capture.set(CAP_PROP_FPS, 3);
+    capture.set(CAP_PROP_FRAME_HEIGHT, 500);
+    capture.set(CAP_PROP_FRAME_WIDTH, 400);
+    capture.set(CAP_PROP_FPS, 3);
 
     /* Check if succeeded camera openning */
     if (!capture.isOpened())
     {
         printf("Could not open Camera\n");
-	    return;
-	}
+        return;
+    }
 
     /* Load the XML face classifier */
     if (!face_cascade.load(face_cascade_name))

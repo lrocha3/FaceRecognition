@@ -1,9 +1,9 @@
 /*
- * main.cpp
- *
- *  Created on: 20/05/2017
- *  Author: Luis Rocha
- */
+* main.cpp
+*
+*  Created on: 20/05/2017
+*  Author: Luis Rocha
+*/
 
 #include <opencv2/objdetect/objdetect.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -51,5 +51,5 @@ int main(void)
 	/* Wait until the thread FaceDetectorThread finishes execution*/
 	t1.join();
 
-    return 0;
+	return 0;
 }

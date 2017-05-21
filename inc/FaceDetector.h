@@ -1,9 +1,9 @@
 /*
- * FaceDetector.h
- *
- *  Created on: 20/05/2017
- *  Author: Luis Rocha
- */
+* FaceDetector.h
+*
+*  Created on: 20/05/2017
+*  Author: Luis Rocha
+*/
 
 #ifndef _FACEDETECTOR_H_
 #define _FACEDETECTOR_H_
